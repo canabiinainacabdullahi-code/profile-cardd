@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canab Restruant</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #636262;
+            color: white;
+        }
+
+        header {
+            background: url("https://www.bing.com/th/id/OIP.q6rHOovA4O_F2qG1GsSzxwHaEJ?w=193&h=135&c=8&rs=1&qlt=90&o=6&dpr=1.4&pid=ImgAns&rm=2")repeat;
+            height: 200px;
+
+
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+
+
+
+        }
+
+        .navbar ul {
+            display: flex;
+            list-style: none;
+            gap: 15px;
+
+
+        }
+
+        .navbar ul li {
+            padding: 10px;
+            color: white;
+        }
+
+        .logo {
+            padding: 10px;
+            font-size: 1.4rem;
+            color: white;
+        }
+
+        span {
+            color: #de9f0a;
+        }
+
+        .hero-contact h2,
+        p {
+            font-size: 1.3rem;
+            font-weight: 300;
+            text-align: center;
+            color: white;
+        }
+
+        .menu-restruant {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #333;
+        
+        }
+
+        .menu-restruant h2 {
+            font-size: 1.4rem;
+            margin: 15px 20px;
+            font-weight: bold;
+            color: aliceblue;
+        }
+
+        .menu-restruant p{
+            color: #333;
+
+        }
+
+
+        .menu-cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            max-width: 700px;
+            margin: 0 auto;
+
+
+
+        }
+
+        .menu-cards .card {
+            background-color: aliceblue;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            width: 250px;
+            transition: transform 0.3s ease;
+           position: sticky;
+           
+            
+
+        }
+
+        .menu-cards .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .menu-cards .card button {
+            background-color: #6995ed;
+            border-radius: 8px;
+            box-shadow: 0 4px 5px rgba(0, 0, 0, 0.3);
+            padding: 6px;
+            border: none;
+            width: 100px;
+            color: white;
+
+        }
+
+        .cheif-restruant {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #333;
+
+
+        }
+
+
+        .cheif-restruant h2{
+            font-size: 1.4rem;
+            margin: 8px 20px;
+            font-weight: bold;
+            color: white;
+
+        }
+
+        .cheif-restruant p{
+            color: #333;
+        }
+
+
+
+        
+
+        .cheif-cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            max-width: 700px;
+            margin: 0 auto;
+
+        }
+
+        .cheif {
+            background-color: aliceblue;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            width: 250px;
+            transition: transform 0.3s ease;
+
+        }
+
+        .cheif img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+
+        }
+
+        .cheif-cards .cheif:hover {
+            transform: translateY(-10px);
+        }
+
+        .about-restruants{
+            text-align: center;
+            color: white;
+        }
+
+        .about-restruants h2{
+            font-size: 1.2rem;
+            margin: 10px 20px;
+            font-weight: bold;
+            color: whitesmoke;
+        }
+
+        .about p{
+            color: #333;
+        }
+
+        .about-cards{
+            display: flex;
+            text-align: center;
+            gap: 15px;
+            margin: 0 auto;
+            max-width: 800px;
+            
+        }
+
+        .about-cards .about{
+            background-color: aliceblue;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            padding: 10px 20px;
+             margin-bottom: 10px;
+             transition: transform 0.3s;
+             color: #333;
+    
+        }
+        .about-cards .about:hover{
+            transform: translatey(-10px);
+        }
+
+
+
+        .about-cards .about button{
+            background-color: #6995ed;
+            border-radius: 8px;
+            padding: 6px;
+            color: aliceblue;
+            margin-top: 10px;
+            border: none;
+            
+
+        }
+
+        .contact{
+            text-align: center;
+
+        }
+
+        .contact h2{
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .contact p{
+            font-size: 1rem;
+            margin: 4px 5px;
+        }
+
+        .contact form{
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .contact form input ,.contact textarea{
+            padding: 10px;
+            width: 250px;
+            margin: 2px auto;
+            
+        }
+
+        .contact button{
+            background-color: #6995ed;
+            padding: 6px;
+            box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
+            border: none;
+            border-radius: 8px;
+            margin-top: 6px;
+            cursor: pointer;
+        }
+
+
+        footer{
+            background-color: #6995ed;
+            color: aliceblue;
+            text-align: center;
+            padding: 20px;
+            margin-top: 10px;
+        }
+
+
+
+    
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo"> <span>Canab</span>Restruant</div>
+            <ul>
+                <li>Home</li>
+                <li>Cheif</li>
+                <li>Menu</li>
+                <li>contact</li>
+            </ul>
+
+        </nav>
+
+        <div class="hero-contact">
+            <h2>Welcome</h2>
+            <p>Waxan idin haynaa cunto dhadhan iyo
+                dhanan leh welcom macamiil
+            </p>
+        </div>
+    </header>
+
+    <section class="menu-restruant">
+        <h2>Menu</h2>
+        <div class="menu-cards">
+            <div class="card">
+                <img
+                    src="https://www.bing.com/th/id/OIP.MdUbjdeE9zg-58rFL6ZhsgHaIv?w=193&h=228&c=8&rs=1&qlt=90&o=6&dpr=1.4&pid=ImgAns&rm=2" />
+                <p>$10</p>
+
+                <button>Menu</button>
+
+            </div>
+            <div class="card">
+                <img
+                    src="https://th.bing.com/th/id/OIP.LVvWh9NSb5-64wAD7d7aowHaFM?w=267&h=187&c=7&r=0&o=7&dpr=1.4&pid=1.7&rm=3" />
+                <p>$10</p>
+
+                <button>Menu</button>
+
+            </div>
+            <div class="card">
+                <img
+                    src="https://th.bing.com/th/id/OIP.qIziapiPd9JfuN2kg-PLVgHaFj?w=212&h=180&c=7&r=0&o=7&dpr=1.4&pid=1.7&rm=3" />
+                <p>$10</p>
+
+                <button>Menu</button>
+
+            </div>
+            <div class="card">
+                <img
+                    src="https://tse4.mm.bing.net/th/id/OIP.Hxs4usvb5j-705T9wr81MwHaLH?r=0&pid=ImgDet&w=193&h=289&c=7&dpr=1.4&o=7&rm=3" />
+                <p>$10</p>
+
+                <button>Menu</button>
+
+            </div>
+        </div>
+
+    </section>
+
+
+    <section class="cheif-restruant">
+        <h2>Cheif</h2>
+        <div class="cheif-cards">
+            <div class="cheif">
+                <img src="https://cdn.pixabay.com/photo/2024/05/27/05/00/chef-8790093_1280.jpg" />
+                <p>$10</p>
+
+
+
+            </div>
+            <div class="cheif">
+                <img
+                    src="https://tse4.mm.bing.net/th/id/OIP.Hxs4usvb5j-705T9wr81MwHaLH?r=0&pid=ImgDet&w=193&h=289&c=7&dpr=1.4&o=7&rm=3" />
+                <p>$10</p>
+
+
+
+            </div>
+            <div class="cheif">
+                <img
+                    src="https://tse4.mm.bing.net/th/id/OIP.pxFv7uaPztJrdhExJJWWvwHaE8?r=0&pid=ImgDet&w=193&h=128&c=7&dpr=1.4&o=7&rm=3" />
+                <p>$10</p>
+
+
+
+            </div>
+        </div>
+
+    </section>
+
+
+    <section class="about-restruants">
+        <h2>About</h2>
+        <div class="about-cards">
+            <div class="about">
+                <p>Starting a business? Want to advertise in a new way? You might
+                    know what you need, or you might be unsure. Either way, we can talk through
+                    different products
+                    and come up with a solution to meet your needs perfectly. </p>
+
+                <button>send me</button>
+
+            </div>
+            <div class="about">
+                <p>Starting a business? Want to advertise in a new way? You might
+                    know what you need, or you might be unsure. Either way, we can talk through
+                    different products
+                    and come up with a solution to meet your needs perfectly. </p>
+                <button>send me</button>
+
+            </div>
+            <div class="about">
+                <p>Starting a business? Want to advertise in a new way? You might
+                    know what you need, or you might be unsure. Either way, we can talk through
+                    different products
+                    and come up with a solution to meet your needs perfectly. </p>
+                <button>send me</button>
+
+            </div>
+        </div>
+
+    </section>
+
+
+    <section class="contact">
+        <h2>Contact</h2>
+        <p>Fadlan Halkaan naga sooxiriir</p>
+        <form>
+            <input type="text" placeholder="Name" required/>
+            <input type="Email" placeholder="Email" required/>
+            <input type="password" placeholder="password" required/>
+            <textarea placeholder="message"></textarea>
+        </form>
+        <button>submit</button>
+    </section>
+
+    <footer>
+        &copy;2026 open Restruant.All remove
+    </footer>
+
+
+
+</body>
+
+</html>
