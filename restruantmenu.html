@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>reatruant menu</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f9f9f9;
+
+        }
+
+        header {
+            background-color: #ffff;
+            padding: 20px 40px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            position: static;
+            top: 0;
+            z-index: 999;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+
+        }
+
+        nav ul li {
+            margin-right: 30px;
+        }
+
+        nav ul li:hover {
+            color: aquamarine;
+        }
+
+        nav .cart {
+            padding: 8px 16px;
+            background-color: #5cb85c;
+            color: white !important;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .menu-toggle {
+            display: none;
+        }
+
+        .hero-content {
+            background: url("https://th.bing.com/th/id/OIP.xNmsIaR0oaQCtveFYrERLwHaEM?w=305&h=180&c=7&r=0&o=7&dpr=1.4&pid=1.7&rm=3");
+            padding: 120px 20px;
+            color: #f9f9f9;
+            text-align: center;
+        }
+
+        .hero-content h2 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            letter-spacing: 2px;
+        }
+
+        .hero-content form {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .hero-content form input {
+            padding: 14px;
+            border-radius: 8px;
+            border: none;
+            width: 300px;
+        }
+
+        form button {
+            padding: 20px;
+            background-color: #5cb85c;
+            color: #f9f9f9 !important;
+            border-radius: 8px;
+            cursor: pointer;
+            border: none;
+
+        }
+
+        section {
+            padding: 60px;
+            text-align: center;
+        }
+
+        h3,
+        h2 {
+            text-align: center;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 40px;
+            letter-spacing: 1px;
+        }
+
+        .menu-items {
+           display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .menu-items .item {
+            display: flex;
+            flex-direction: column;
+            grid: 10px;
+            background-color: #f9f9f9;
+            padding: 20px;
+            width: 250px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+        }
+
+        .menu-items .item:hover {
+            transform: translatey(10px);
+        }
+
+        .menu-items .item img {
+            width: 100%;
+        }
+
+        .menu-items .item p {
+            font-weight: 500px;
+            margin-top: 10px;
+        }
+
+        .menu-items .item button {
+            background: #5cb85c;
+            color: white !important;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            padding: 8px 16px;
+        }
+
+        .free-section {
+            background-color: #f9f9f9;
+            padding: 60px 40px;
+            text-align: center;
+
+        }
+
+        .free-section .food-cards {
+           display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+
+        }
+
+        .free-section .food-card {
+            display: flex;
+            flex-direction: column;
+            grid: 10px;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0 ,0,0,0.2);
+            width: 250px;
+            text-align: center;
+            transition: transform 0.3s;
+
+        }
+
+        .free-section .food-card:hover{
+            transform: translateY(-10px);
+        }
+
+        .free-section .food-card img{
+            width: 100%;
+            height: 200px;
+            border-radius: 10px;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+        }
+
+         .free-section .food-card p{
+            font-size: 17px;
+            margin-bottom: 10px;
+
+         }
+
+          .free-section .food-card button{
+            background-color: #5cb85c;
+            color: #f9f9f9;
+            border: none;
+            border-radius: 10px;
+            padding: 8px 16px;
+            cursor: pointer;
+          }
+
+            .contact{
+                background-color: aliceblue;
+                padding: 60px 40px;
+                text-align: center;
+
+
+          }
+
+          .contact form{
+           display: flex;
+           flex-direction: column;
+           gap: 20px;
+           align-items: center;
+          }
+
+          .contact form input, .contact textarea{
+            padding: 12px 16px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            width: 100%;
+            max-width: 400px;
+            font-size: 16px;
+
+          }
+
+          footer{
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+          }
+
+          footer ul{
+            list-style: none;
+            margin-top: 20px;
+          }
+
+          footer ul li{
+            display: inline;
+            margin-right: 20px;
+
+          }
+
+          footer ul li a{
+            color: white;
+            text-decoration: none;
+          }
+
+          @media screen and (max-width: 768px){
+           .navbar-links{
+            display: none;
+           }
+            
+          }
+
+
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">ceysh</div>
+            <ul class="navbar-links">
+                <li>Home</li>
+                <li>Menu</li>
+                <li>food</li>
+                <li>custome</li>
+            </ul>
+            <div class="cart">
+                <button>sing up</button>
+            </div>
+            <button class="menu-toggle">sing up</button>
+        </nav>
+    </header>
+
+    <!--hero section-->
+    <sectin class="hero">
+        <div class="hero-content">
+            <h2>be the fastes in delivering your food</h2>
+            <form>
+                <input type="text" placeholder="search your dish">
+                <button type="submit">order Now</button>
+            </form>
+        </div>
+    </sectin>
+
+    <!--our special-->
+
+    <section class="special-dishes">
+        <h2>Our special dishes</h2>
+        <div class="menu-items">
+            <div class="item">
+                <img
+                    src="https://th.bing.com/th/id/OIP.bi_TMfVbSe6ep_1cMl5vIgHaHa?w=204&h=203&c=7&r=0&o=7&dpr=1.4&pid=1.7&rm=3" />
+                <p>hamburger street food</p>
+                <span>$20</span>
+                <button>Add to cart</button>
+
+            </div>
+            <div class="item">
+                <img
+                    src="https://www.bing.com/th/id/OIP.IRJugiXe28MmXEJM4EDyTgHaEK?w=193&h=135&c=8&rs=1&qlt=90&o=6&dpr=1.4&pid=ImgAns&rm=2" />
+                <p>hamburger street food</p>
+                <span>$20</span>
+                <button>Add to cart</button>
+
+            </div>
+            <div class="item">
+                <img
+                    src="https://th.bing.com/th/id/OIP.k4QspXtkPc14b4sqoRXnYgHaE8?w=289&h=193&c=7&r=0&o=7&dpr=1.4&pid=1.7&rm=3" />
+
+                <p>hamburger street food</p>
+                <span>$20</span>
+                <button>Add to cart</button>
+
+            </div>
+            <div class="item">
+                <img
+                    src="https://th.bing.com/th/id/OIP.siPI0ga71g_zVErnmPlf6AHaHa?w=184&h=184&c=7&r=0&o=7&dpr=1.4&pid=1.7&rm=3" />
+
+                <p>hamburger street food</p>
+                <span>$20</span>
+                <button>Add to cart</button>
+
+            </div>
+
+            <div class="item">
+                <img
+                    src="https://th.bing.com/th/id/OIP.fxZhrXeclmSy4ajvFr-eBwHaE3?w=274&h=180&c=7&r=0&o=7&dpr=1.4&pid=1.7&rm=3" />
+
+                <p>hamburger street food</p>
+                <span>$20</span>
+                <button>Add to cart</button>
+
+            </div>
+
+            <div class="item">
+                <img
+                    src="https://th.bing.com/th?q=Paella&w=120&h=120&c=1&rs=1&qlt=70&r=0&o=7&cb=1&dpr=1.4&pid=InlineBlock&rm=3&mkt=en-WW&cc=SO&setlang=en&adlt=moderate&t=1&mw=247" />
+
+                <p>hamburger street food</p>
+                <span>$20</span>
+                <button>Add to cart</button>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+    <!--papular menu-->
+    <section class="papular-menu">
+        <h3>Our papular menu</h3>
+        <div class="menu-items">
+            <div class="item">
+                <img
+                    src="https://th.bing.com/th/id/OIP.z_P_x9ciE8WimYZzNGejvQHaEJ?w=282&h=180&c=7&r=0&o=7&dpr=1.4&pid=1.7&rm=3" />
+                <p>hamburger street food</p>
+                <span>$20</span>
+                <button>Add to cart</button>
+
+            </div>
+            <div class="item">
+                <img
+                    src="https://th.bing.com/th/id/OIP.LadujoU81UAUhQjy9gElUwHaHa?w=180&h=180&c=7&r=0&o=7&dpr=1.4&pid=1.7&rm=3" />
+                <p>hamburger street food</p>
+                <span>$20</span>
+                <button>Add to cart</button>
+
+            </div>
+            <div class="item">
+                <img
+                    src="https://th.bing.com/th/id/OIP.k4QspXtkPc14b4sqoRXnYgHaE8?w=289&h=193&c=7&r=0&o=7&dpr=1.4&pid=1.7&rm=3" />
+
+                <p>hamburger street food</p>
+                <span>$20</span>
+                <button>Add to cart</button>
+
+            </div>
+            <div class="item">
+                <img
+                    src="https://th.bing.com/th/id/OIP.kIN5yz2GvhAG7brLUVPgDQHaEJ?w=312&h=180&c=7&r=0&o=7&dpr=1.4&pid=1.7&rm=3" />
+
+                <p>hamburger street food</p>
+                <span>$20</span>
+                <button>Add to cart</button>
+
+            </div>
+
+            <div class="item">
+                <img
+                    src="https://th.bing.com/th/id/OIP.fxZhrXeclmSy4ajvFr-eBwHaE3?w=274&h=180&c=7&r=0&o=7&dpr=1.4&pid=1.7&rm=3" />
+
+                <p>hamburger street food</p>
+                <span>$20</span>
+                <button>Add to cart</button>
+
+            </div>
+
+            <div class="item">
+                <img
+                    src="https://th.bing.com/th/id/OIP.toYLjb-NH4km2VSBrTmA2gHaE7?w=242&h=180&c=7&r=0&o=7&dpr=1.4&pid=1.7&rm=3" />
+
+                <p>hamburger street </p>
+                <span>$20</span>
+                <button>Add to cart</button>
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+    <!--free-section-->
+    <section class="free-section">
+        <h2>free food</h2>
+        <div class="food-cards">
+            <div class="food-card">
+                <img
+                    src="https://www.bing.com/th/id/OIP.MdUbjdeE9zg-58rFL6ZhsgHaIv?w=193&h=228&c=8&rs=1&qlt=90&o=6&dpr=1.4&pid=ImgAns&rm=2" />
+                <h3>free food</h3>
+                <p>Ipsum pariatur incididunt fugiat ut. Qui labore culpa cillum <br>
+                    velit sint irure qui pariatur culpa irure non occaecat non reprehender<br>
+                    it. Ea nulla et esse sunt eu proident ex do nostrud mollit velit aliqua tempor. <br>
+                    Et tempor sint exercitation reprehenderit nisi laboris mollit aliquip. </p>
+                <button>Enroll</button>
+
+
+            </div>
+            <div class="food-card">
+                <img
+                    src="https://www.bing.com/th/id/OIP.gDrQfNySM1o1FwACDiwbBAHaEK?w=193&h=135&c=8&rs=1&qlt=90&o=6&dpr=1.4&pid=ImgAns&rm=2" />
+                <h3>free food</h3>
+                <p>Ipsum pariatur incididunt fugiat ut. Qui labore culpa cillum <br>
+                    velit sint irure qui pariatur culpa irure non occaecat non reprehender<br>
+                    it. Ea nulla et esse sunt eu proident ex do nostrud mollit velit aliqua tempor. <br>
+                    Et tempor sint exercitation reprehenderit nisi laboris mollit aliquip. </p>
+                <button>Enroll</button>
+
+
+            </div>
+            <div class="food-card">
+                <img
+                    src="https://th.bing.com/th/id/OIP.UIoVWYwXq0skyzBYO2Z7UwHaEJ?w=278&h=180&c=7&r=0&o=7&dpr=1.4&pid=1.7&rm=3" />
+                <h3>free food</h3>
+                <p>Ipsum pariatur incididunt fugiat ut. Qui labore culpa cillum <br>
+                    velit sint irure qui pariatur culpa irure non occaecat non reprehender<br>
+                    it. Ea nulla et esse sunt eu proident ex do nostrud mollit velit aliqua tempor. <br>
+                    Et tempor sint exercitation reprehenderit nisi laboris mollit aliquip. </p>
+                <button>Enroll</button>
+
+
+            </div>
+            <div class="food-card">
+                <img
+                    src="https://th.bing.com/th/id/OIP.sQhp3UDvZgsQxVeNg7qc2gHaEK?w=321&h=180&c=7&r=0&o=7&dpr=1.4&pid=1.7&rm=3" />
+                <h3>free food</h3>
+                <p>Ipsum pariatur incididunt fugiat ut. Qui labore culpa cillum <br>
+                    velit sint irure qui pariatur culpa irure non occaecat non reprehender<br>
+                    it. Ea nulla et esse sunt eu proident ex do nostrud mollit velit aliqua tempor. <br>
+                    Et tempor sint exercitation reprehenderit nisi laboris mollit aliquip. </p>
+                <button>Enroll</button>
+
+
+            </div>
+            <div class="food-card">
+                <img
+                    src="https://th.bing.com/th/id/OIP.Mak5T5YJxtzmo6CXWvdv8QHaE8?w=231&h=180&c=7&r=0&o=7&dpr=1.4&pid=1.7&rm=3" />
+                <h3>free food</h3>
+                <p>Ipsum pariatur incididunt fugiat ut. Qui labore culpa cillum <br>
+                    velit sint irure qui pariatur culpa irure non occaecat non reprehender<br>
+                    it. Ea nulla et esse sunt eu proident ex do nostrud mollit velit aliqua tempor. <br>
+                    Et tempor sint exercitation reprehenderit nisi laboris mollit aliquip. </p>
+                <button>Enroll</button>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!--contact-form-->
+
+    <section class="contact">
+        <form action="#">
+            <input type="text" placeholder="your Name" required />
+            <input type="email" placeholder="Email" required />
+            <textarea placeholder="your-massege" required></textarea>
+            <button type="submit">send message</button>
+
+        </form>
+    </section>
+
+    <!--footer-->
+
+    <footer>
+        <p>&copy; 2026 grapeslab. All rights reserved</p>
+        <ul>
+        <li><a href="#">support</a></li>
+        <li><a href="#">customer</a></li>
+        <li><a href="#">Useful links</a></li>
+        <li><a href="#">contact</a></li>
+        </ul>
+    </footer>
+
+
+
+</body>
+
+</html>
