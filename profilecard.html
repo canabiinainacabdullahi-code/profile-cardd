@@ -1,59 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>profilecard</title>
+    <title>profile card</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css"
+        integrity="sha512-ApSLB1Pd3/bZN8fWB/RG9YhN/7bd9Hkf3AGaE2mPfebjrxagjuBtx2GcgdqIlJkUzwylBo61r9Xa9NmgBI0swA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
-        *{
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        body{
+        body {
             background-color: aliceblue;
-            color: #333;
+            font-family: Arial, Helvetica, sans-serif;
+
         }
 
-        .container{
+        .profile-card {
+            display: flex;
             text-align: center;
-            padding: 20px;
-            margin: 0 auto;
+             
+
         }
 
-         h1{
-            font-size: 1.2rem;
-            color: #333;
-        
+        .profile-card .card {
+            width: 300px;
+            background-color: lightcyan;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            padding: 16px 20px;
+            margin: 15px auto;
+            border: 2px solid #5c6ef3;
+
         }
 
-        .container .card img{
-            width: 40px;
-            height: 40px;
+        .profile-card h2 {
+            font-size: 1rem;
+            margin: 10px 15px;
+        }
+
+        .profile-card p {
+            font-size: 1rem;
+            margin: 10px 15px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+
+
+        }
+
+        .card img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
             object-fit: cover;
-            margin: 0 auto;
-            border-radius: 15px;
+            display: block;
+            margin: 10px auto 5px;
+            border: 2px solid #4a5cfe;
         }
 
-        .container .card{
-            background-color: azure;
-            border-radius: 10px;
-            box-shadow: 0 5px 14px rgba(0,0,0,0.3);
-            width: 250px;
-        }
+         .social-icons{
+            display: block;
+            text-align: center;
+
+         }
+
+        .profile-card .card .social-icons li {
+            background-color: hsl(234, 89%, 65%);
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+            color: white;
+            border-radius: 50%;
+            margin: 0 auto;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+            gap: 20px;
+            width: 30px;
+            height: 25px;
+            transition: transform 0.3s;
+             }
+
+             .social-icons li:hover{
+                transform: translateY(-10px);
+             }
     </style>
 </head>
+
 <body>
-    <div class="container">
+    <div class="profile-card">
         <div class="card">
-            <img src="c:\Users\hp\Pictures\Camera Roll\IMG_5789.JPG"/>
-             <h1>Canab Cabdullahi</h1>
-            <p>I want To become a Great Developer</p>
+            <img src="https://www.bing.com/th/id/OIP.Lq8W-0B8kgy93G_eXV2yLwHaHa?w=193&h=193&c=8&rs=1&qlt=90&o=6&dpr=1.4&pid=ImgAns&rm=2"
+                alt="" />
+            <h2>Anab abdullahi</h2>
+            <p>hadii ad rabto inaa guul gaarto wax joogte
+                majirto guul lagu gaaro halmaalin lkn waxa
+                lajooogteeyo ayaa guul lagu gara maskaxdadana
+                kasaar casida iyo warwarka waayo cabsidu
+                waa waxa kaa hor istagikara dadalka guleysta
+            </p>
+
+            <div class="social-icons">
+                <li class="fa-brands fa-whatsapp"></li>
+                <li class="fa-brands fa-tiktok"></li>
+                <li class="fa-brands fa-facebook-f"></li>
+
+
+            </div>
 
         </div>
 
+
+
+
+
     </div>
-    
+
+
+
 </body>
+
 </html>
